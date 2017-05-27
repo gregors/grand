@@ -2,11 +2,11 @@ require 'grand/version'
 require 'rubystats'
 
 module GRand
-  def self.nrand(*d)
+  def self.randn(*d)
     return normal_distribution.rng if d.size == 0
 
     x  = d.shift
-    x.times.map{ self.nrand(*d) }
+    x.times.map{ self.randn(*d) }
   end
 
   def self.normal_distribution
