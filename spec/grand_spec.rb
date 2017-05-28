@@ -25,4 +25,13 @@ RSpec.describe GRand do
    end
   end
 
+  describe 'monkey patches Enumerable' do
+    describe '.shape' do
+      it 'returns the shape of nested arrays' do
+       results = GRand::randn(2,4,1)
+       expect(results.shape).to eq [2,4,1]
+      end
+    end
+  end
+
 end
